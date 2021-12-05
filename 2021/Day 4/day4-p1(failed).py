@@ -1,3 +1,18 @@
+def display(board):
+    '''Display the contents of a bingo board'''
+
+    for r in board:
+        row = ""
+        for c in r:
+            if c == 'fill':
+                row += "**"
+            elif c < 10:
+                row += " " + str(c)
+            else:
+                row += str(c)
+            row += " "
+        print(row)
+
 def main(file):
     # Extract data from file
     document = open(file)
