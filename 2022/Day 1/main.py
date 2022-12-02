@@ -29,6 +29,7 @@ def part2(elves):
         elves.pop(index)
     print(sum(top))
 
+part1(elves)
 part2(elves)
 
             
