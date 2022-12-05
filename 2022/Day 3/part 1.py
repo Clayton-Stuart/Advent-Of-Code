@@ -6,25 +6,15 @@ vals = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 
 
 for i in range(len(ls)):
     ls[i] = ls[i].strip()
-
-elf_groups = []
-
-while len(ls) > 0:
-    elf_groups.append([])
-    elf_groups[-1].append(ls[0])
-    elf_groups[-1].append(ls[1])
-    elf_groups[-1].append(ls[2])
-    del ls[0]
-    del ls[0]
-    del ls[0]
+    ls[i] = [ls[i][:len(ls[i])//2], ls[i][len(ls[i])//2:]]
 
 sums = []
-
-for i in elf_groups:
-    i.sort(key=len)
+for i in ls:
     for j in i[0]:
-        if j in i[1] and j in i[2]:
+        if j in i[1]:
             sums.append(vals[j])
             break
 
 print(sum(sums))
+
+
